@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your App Title</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/">File Compressor</a>
+        
+        <!-- Add navigation links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" *ngIf="shouldShowLoginLink()">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="shouldShowLogoutLink()">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main >
+   
+    <router-outlet></router-outlet>
+
+  
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      &copy; 2023 File Compressor Application. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+<style>
+  .main {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px; /* Ensure the main content occupies at least the viewport height */
+}
+
+.flex-grow-1 {
+  flex-grow: 1; /* This makes the main content expand to fill the available space */
+}
+</style>
